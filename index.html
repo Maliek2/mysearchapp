@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <title>Music Player</title>
@@ -12,6 +12,53 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <script src="https://kit.fontawesome.com/10db74b204.js" crossorigin="anonymous"></script>
     <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+    <script>
+      window.googletag = window.googletag || {cmd: []};
+
+      // GPT ad slots
+      var anchorSlot;
+      var staticSlot;
+
+      googletag.cmd.push(function() {
+        // Define an anchor ad slot at the top of the viewport.
+        // Note: a single anchor ad slot may be defined per page, at either the
+        // top or bottom of the viewport.
+        //
+        // Be aware that anchor ads are not limited to mobile devices. If you
+        // serve the same code to both mobile and non-mobile users, it is
+        // recommended to explicitly define when and where anchor ads should be
+        // shown for each environment. Here we use a basic check of viewport
+        // width to create a top anchor on mobile and a bottom anchor on
+        // non-mobile devices.
+        if (document.body.clientWidth <= 500) {
+          anchorSlot = googletag.defineOutOfPageSlot(
+            '/6355419/Travel', googletag.enums.OutOfPageFormat.TOP_ANCHOR);
+        } else {
+          anchorSlot = googletag.defineOutOfPageSlot(
+            '/6355419/Travel', googletag.enums.OutOfPageFormat.BOTTOM_ANCHOR);
+        }
+
+        // Anchor slots return null if the page or device does not support
+        // anchors.
+        if (anchorSlot) {
+          anchorSlot
+              .setTargeting('test', 'anchor')
+              .addService(googletag.pubads());
+
+          document.getElementById('status').innerText =
+            'Anchor ad is initialized. Scroll page to activate.';
+        }
+
+        // Define static ad slots.
+        staticSlot = googletag.defineSlot(
+              '/6355419/Travel/Europe', [100, 100], 'static-ad-1')
+            .addService(googletag.pubads());
+
+        // Enable SRA and services.
+        googletag.pubads().enableSingleRequest();
+        googletag.enableServices();
+      });
+    </script>
     <script>
       window.googletag = window.googletag || {cmd: []};
 
@@ -133,7 +180,7 @@
     <div class="content">
       <span id="status">Web interstitial is not supported on this page.</span>
       <p>
-        <a id="link" href="https://www.example.com/">TRIGGER INTERSTITIAL</a>
+        <a id="link" href="https://www.example.com/">Download</a>
       </p>
       <p>
         <!--
@@ -141,8 +188,8 @@
           adding a data-google-interstitial="false" attribute to the anchor element or
           any ancestor of the anchor element.
         -->
-        <a data-google-interstitial="false" href="https://www.example.com/">
-          This link will never trigger an interstitial
+        <a data-google-interstitial="false" href="https://web.adball.tech/home.html">
+          This link will redirect you 
         </a>
       </p>
     </div>
@@ -153,6 +200,17 @@
           googletag.display(staticSlot);
         });
     </script>
+    <div id="page-content" style="height: 900vh;">
+      <h1 id="status">Maliek News</h1>
+      <div id="static-ad-1" style="width: 100px; height: 100px;"></div>
+    </div>
+    <script>
+        googletag.cmd.push(function() {
+          // Ensure the first call to display comes after static ad slot
+          // divs are defined.
+          googletag.display(staticSlot);
+        });
+      </script>
     <script src="assets/script/moment.min.js"></script>
     <script src="assets/script/app.js"></script>
 </body>
