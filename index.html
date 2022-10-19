@@ -46,7 +46,7 @@
               .addService(googletag.pubads());
 
           document.getElementById('status').innerText =
-            'Anchor ad is initialized. Scroll page to activate.';
+            'Scroll page.';
         }
 
         // Define static ad slots.
@@ -65,19 +65,6 @@
 </head>
 
 <body>
-   <div id="page-content" style="height: 900vh;">
-      <h1 id="status">Maliek News</h1>
-      <div id="static-ad-1" style="width: 100px; height: 100px;"></div>
-    </div>
-    <script>
-        googletag.cmd.push(function() {
-          // Ensure the first call to display comes after static ad slot
-          // divs are defined.
-          googletag.display(staticSlot);
-        });
-      </script>
-    
-
         <main class="text-white">
             <div id="search-result-wrapper">
                 <section id="search-artists" class="my-4 d-none">
@@ -132,15 +119,10 @@
                 <h2 class="h5 mb-3">Tracks</h2>
                 <ul class="list-group mb-4"></ul>
             </section>
-            <!-- Vercel -->
+            
 
         </main>
-
-    </div>
-    
-    <script src="assets/script/moment.min.js"></script>
-    <script src="assets/script/app.js"></script>
-    <div class="container my-4">
+        <div class="container my-4">
         <form id="search-form" class="text-center">
             <div class="form-group">
                 <div class="input-group mb-2">
@@ -152,6 +134,11 @@
                 </div>
             </div>
         </form>
+    </div>
+    
+    <script src="assets/script/moment.min.js"></script>
+    <script src="assets/script/app.js"></script>
+
 </body>
 
 </html>
