@@ -7,58 +7,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <title>Music Player</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css">
     <script src="https://kit.fontawesome.com/10db74b204.js" crossorigin="anonymous"></script>
     <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
-    <script>
-      window.googletag = window.googletag || {cmd: []};
-
-      // GPT ad slots
-      var anchorSlot;
-      var staticSlot;
-
-      googletag.cmd.push(function() {
-        // Define an anchor ad slot at the top of the viewport.
-        // Note: a single anchor ad slot may be defined per page, at either the
-        // top or bottom of the viewport.
-        //
-        // Be aware that anchor ads are not limited to mobile devices. If you
-        // serve the same code to both mobile and non-mobile users, it is
-        // recommended to explicitly define when and where anchor ads should be
-        // shown for each environment. Here we use a basic check of viewport
-        // width to create a top anchor on mobile and a bottom anchor on
-        // non-mobile devices.
-        if (document.body.clientWidth <= 500) {
-          anchorSlot = googletag.defineOutOfPageSlot(
-            '/6355419/Travel', googletag.enums.OutOfPageFormat.TOP_ANCHOR);
-        } else {
-          anchorSlot = googletag.defineOutOfPageSlot(
-            '/6355419/Travel', googletag.enums.OutOfPageFormat.BOTTOM_ANCHOR);
-        }
-
-        // Anchor slots return null if the page or device does not support
-        // anchors.
-        if (anchorSlot) {
-          anchorSlot
-              .setTargeting('test', 'anchor')
-              .addService(googletag.pubads());
-
-          document.getElementById('status').innerText =
-            'Scroll page.';
-        }
-
-        // Define static ad slots.
-        staticSlot = googletag.defineSlot(
-              '/6355419/Travel/Europe', [100, 100], 'static-ad-1')
-            .addService(googletag.pubads());
-
-        // Enable SRA and services.
-        googletag.pubads().enableSingleRequest();
-        googletag.enableServices();
-      });
-    </script>
+    
     
     
 
@@ -121,7 +74,7 @@
             </section>
             
 
-        </main>
+        
         <div class="container my-4">
         <form id="search-form" class="text-center">
             <div class="form-group">
@@ -135,7 +88,7 @@
             </div>
         </form>
     </div>
-    
+    </main>
     <script src="assets/script/moment.min.js"></script>
     <script src="assets/script/app.js"></script>
 
