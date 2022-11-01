@@ -1,3 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <link rel="canonical" href="https://www.adball.tech/?amp=1">
+    <title>News App</title>
+    <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+    <script>
+      window.googletag = window.googletag || {cmd: []};
+      googletag.cmd.push(function() {
+        
+        googletag.defineSlot('/6355419/Travel/Europe', [300, 250], 'slot-3')
+                 .addService(googletag.pubads());
+
+        // Enable SRA and services.
+        googletag.pubads().enableSingleRequest();
+        googletag.enableServices();
+      });
+
+      function loadAds() {
+        googletag.cmd.push(function() {
+          googletag.display('slot-3');
+        });
+      }
+    </script>
+    <style>
+        .bodyStyle{
+            font-size: 32px;
+        }
+    </style>
+    
+</head>
+<body >
+<div class="bodyStyle">
+ <div align="center">
+    <h1>News App</h1>
+
+    
+    <div class="column">
+      <h5>Advertisement</h5>
+      <div id="slot-3" class="placeholder" style="width: 300px; height: 250px;"></div>
+      <button onclick="loadAds();">Load Ads</button>
+    
+    
+
+    
+</div>
+</div>
+</div>
+<script type="text/javascript">
+    function onDeviceReady() {
+        admob.initAdmob("banner ID","interstitial ID");
+    }
+    document.addEventListener('deviceready',onDeviceReady, true);
+</script>
+<script type="text/javascript">
+function showTestBanner(){
+var admobParam=new  admob.Params();
+        //admobParam.extra={'keyword':"admob phoneapp"};
+        //admobParam.isForChild=true;
+        admobParam.isTesting=true;
+        admob.showBanner(admob.BannerSize.BANNER,admob.Position.TOP_CENTER,admobParam);
+}
+    function showInterstitial(){
+        admob.isInterstitialReady(function(isReady){
+            if(isReady){
+                admob.showInterstitial();
+            }
+        });
+    }
+    function onInterstitialReceive (message) {
+        alert(message.type+" ,you can show it now");
+        //admob.showInterstitial();//show it when received
+    }
+    function onReceiveFail (message) {
+     	var msg=admob.Error[message.data];
+        if(msg==undefined){
+           msg=message.data;
+        }
+        document.getElementById("alertdiv").innerHTML="load fail: "+message.type+"  "+msg;
+    }
+    function onDeviceReady() {
+    	admob.initAdmob("ca-app-pub-3940256099942544/2934735716","ca-app-pub-3940256099942544/4411468910");
+        document.addEventListener(admob.Event.onInterstitialReceive, onInterstitialReceive, false);
+        document.addEventListener(admob.Event.onInterstitialFailedReceive,onReceiveFail, false);
+        document.addEventListener(admob.Event.onBannerFailedReceive,onReceiveFail, false);
+    }
+
+    document.addEventListener('deviceready',onDeviceReady, false);
+   
+    </script>
+
+<div id="alertdiv"/>
+<script type="text/javascript" src="cordova.js"></script>
+
+</div>
+<script type="text/javascript" src="ads.js"></script>
+
+<lu>
+        <li><a href="javascript:admob.cacheInterstitial();">Load Interstitial</a></li>
+        <br/>
+        <li><a href="javascript:showInterstitial();">Show Interstitial</a></li>
+        <br/>
+        <li><a href="javascript:showTestBanner();">Test Banner</a></li>
+        <br/>
+        <li><a href="javascript:admob.showBannerAbsolute(admob.BannerSize.BANNER,0,70);">Banner 1</a></li>
+        <br/>
+        <li><a href="javascript:admob.showBannerAbsolute(admob.BannerSize.BANNER,30,70);">Banner 2</a></li>
+        <br/>
+        <li><a href="javascript:admob.showBanner(admob.BannerSize.BANNER,admob.Position.BOTTOM_CENTER,null)">Banner 3</a></li>
+        <br/>
+        <li><a href="javascript:admob.showBanner(admob.BannerSize.BANNER,admob.Position.BOTTOM_APP,null)">Banner 4</a></li>
+        <br/>
+        <li><a href="javascript:admob.hideBanner()">Hide Banner</a></li>
+    
+        <li><a href="javascript:admob.hideBanner();">Hiden Banner</a></li>
+        <br/><br/>
+        <li><a href="javascript:admob.showBannerAbsolute(admob.BannerSize.BANNER,0,170)">Show Banner Absolute</a></li>
+        <br/><br/>
+        <li><a href="javascript:admob.showBanner(admob.BannerSize.SMART_BANNER,admob.Position.TOP_CENTER);">Banner Relation</a></li>
+    </lu>
+
+
+</body>
+</html>
 
     
     
